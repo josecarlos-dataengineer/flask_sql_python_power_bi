@@ -5,7 +5,17 @@ import pandas as pd
 from functions_packages.path_builder import path_definition,path_builder
 import datetime as dt
 
-def is_api_available(table_name:str) -> str:
+def is_api_available(table_name:str) -> list:
+    """
+    Args:
+        table_name (str): Nome da tabela a qual se consulta via API
+
+    Raises:
+        Exception: Indisponibilidade do serviço
+
+    Returns:
+        str: lista com mensagem 'Disponíve', response e url
+    """
     url = f"http://127.0.0.1:5000/api/tabela/{table_name}"
     response = requests.get(url)
 
@@ -14,7 +24,15 @@ def is_api_available(table_name:str) -> str:
     else:
         raise Exception(f"Url: {url} indisponível: {response}")
 
-def get_data_from_api(table_name) -> object: 
+def get_data_from_api(table_name) -> tuple: 
+    """_summary_
+
+    Args:
+        table_name (_type_): Nome da tabela a qual se consulta via API
+
+    Returns:
+        tuple: response.content,table_name
+    """
     resp_list = is_api_available(table_name)
     if resp_list[0] == "disponível":
         response = requests.get(resp_list[2])
@@ -23,6 +41,20 @@ def get_data_from_api(table_name) -> object:
     return response.content,table_name
 
 def writeson_landing(table_name:str,layer=1,extension="json") -> object:
+    """_summary_
+
+    Args:
+        table_name (str): Nome da tabela a qual se consulta via API
+        layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 1.
+        extension (str, optional): Extensão do arquivo. Defaults to "json".
+    Calls: 
+        get_data_from_api(): Requisita API através do nome da tabela
+        path_definition(): Define o diretório conforme table_name,layer e extension
+        path_builder(): Cria o diretório, caso não exista
+
+    Writes:
+        object: Escreve o objeto no diretorio definido
+    """
     
     data, table_name = get_data_from_api(table_name)
 
@@ -44,10 +76,17 @@ def writeson_landing(table_name:str,layer=1,extension="json") -> object:
 
 
 def read_from_landing(table_name:str,layer=1,extension="json") -> object:
-    '''
-    
-    read_from_landing(table_name="vendedores")  
-    '''
+    """_summary_
+
+    Args:
+        table_name (str): Nome da tabela a qual se consulta via API
+        layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 1.
+        extension (str, optional): Extensão do arquivo. Defaults to "json".
+
+    Returns:
+        object: Pandas DataFrame
+    """
+
     src_path, src_extension,dstn_path,dstn_extension = path_definition(
         src_layer=layer,
         table_name=table_name,
@@ -59,7 +98,16 @@ def read_from_landing(table_name:str,layer=1,extension="json") -> object:
 
         return df    
     
-def add_columns(df:pd.DataFrame,table_name:str):
+def add_columns(df:pd.DataFrame,table_name:str) -> pd.DataFrame:
+    """_summary_
+
+    Args:
+        df (pd.DataFrame): Pandas Dataframe a ser tratado
+        table_name (str): Nome da tabela fonte do Dataframe
+
+    Returns:
+        pd.DataFrame: Pandas Dataframe com a nova coluna 'load_date'
+    """
     # df["table_name"] = table_name
     df["load_date"] = dt.datetime.now()
     return df 
@@ -68,14 +116,15 @@ def add_columns(df:pd.DataFrame,table_name:str):
 def writeson_processed(table_name:str,layer=2,extension="csv") -> object:
     """
     Args:
-        table_name (str): _description_
-        layer (int, optional): _description_. Defaults to 2.
-        extension (str, optional): _description_. Defaults to "csv".
+        table_name (str): Nome da tabela a ser coletada e escrita
+        layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 2.
+        extension (str, optional): Extensão do arquivo. Defaults to "csv".
 
-    Returns:
-        object: _description_
-        
-    writeson_processed(table_name="vendedores")
+    Writes:
+        object: csv file
+    
+    example: 
+        writeson_processed(table_name="vendedores")
     """
     src_path, src_extension,dstn_path,dstn_extension = path_definition(
         dstn_layer=layer,
@@ -92,17 +141,15 @@ def writeson_processed(table_name:str,layer=2,extension="csv") -> object:
 
 def writeson_consume(table_name:list,layer=3,extension="csv") -> object:
     """
-    
-
     Args:
-        table_name (str): _description_
-        layer (int, optional): _description_. Defaults to 2.
-        extension (str, optional): _description_. Defaults to "csv".
+        table_name (list): Lista de nomes das tabelas a ser coletadas, integradas e escritas
+        layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 3.
+        extension (str, optional): Extensão do arquivo. Defaults to "csv".
 
-    Returns:
-        object: _description_
+    Writes:
+        object: arquivo csv com a integração das tabelas produtos. clientes,vendedores e vendas
         
-    writeson_processed(table_name="vendedores")
+    writeson_consume(table_name="vendedores")
     """
     src_path, src_extension,dstn_path,dstn_extension = path_definition(
         src_layer=2,

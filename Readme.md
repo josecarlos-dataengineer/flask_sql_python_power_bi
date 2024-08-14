@@ -77,30 +77,103 @@ Basta executar o arquivo etl\functions.py, e as funções serão executadas na o
 docstrings: <br>
 is_api_available(table_name:str)
 """
+Args:
+    table_name (str): Nome da tabela a qual se consulta via API
+
+Raises:
+    Exception: Indisponibilidade do serviço
+
+Returns:
+    str: lista com mensagem 'Disponíve', response e url
 """ <br>
 get_data_from_api(table_name)
 """
+Args:
+    table_name (_type_): Nome da tabela a qual se consulta via API
+
+Returns:
+    tuple: response.content,table_name
 """ <br>
 writeson_landing(table_name:str,layer=1,extension="json")
 """
+Args:
+    table_name (str): Nome da tabela a qual se consulta via API
+    layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 1.
+    extension (str, optional): Extensão do arquivo. Defaults to "json".
+Calls: 
+    get_data_from_api(): Requisita API através do nome da tabela
+    path_definition(): Define o diretório conforme table_name,layer e extension
+    path_builder(): Cria o diretório, caso não exista
+
+Writes:
+    object: Escreve o objeto no diretorio definido
 """ <br>
 read_from_landing(table_name:str,layer=1,extension="json")
 """
+Args:
+    table_name (str): Nome da tabela a qual se consulta via API
+    layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 1.
+    extension (str, optional): Extensão do arquivo. Defaults to "json".
+
+Returns:
+    object: Pandas DataFrame
 """ <br>
 add_columns(df:pd.DataFrame,table_name:str)
 """
+Args:
+    df (pd.DataFrame): Pandas Dataframe a ser tratado
+    table_name (str): Nome da tabela fonte do Dataframe
+
+Returns:
+    pd.DataFrame: Pandas Dataframe com a nova coluna 'load_date'
 """ <br>
 writeson_processed(table_name:str,layer=2,extension="csv")
 """
+Args:
+    table_name (str): Nome da tabela a ser coletada e escrita
+    layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 2.
+    extension (str, optional): Extensão do arquivo. Defaults to "csv".
+
+Writes:
+    object: csv file
+
+example: 
+    writeson_processed(table_name="vendedores")
 """ <br>
 writeson_consume(table_name:list,layer=3,extension="csv")
 """
+Args:
+    table_name (list): Lista de nomes das tabelas a ser coletadas, integradas e escritas
+    layer (int, optional): Camada na qual será escrito o arquivo. Defaults to 3.
+    extension (str, optional): Extensão do arquivo. Defaults to "csv".
+
+Writes:
+    object: arquivo csv com a integração das tabelas produtos. clientes,vendedores e vendas
+    
+writeson_consume(table_name="vendedores")
 """ <br>
 path_definition(src_layer=1,dstn_layer=2,table_name="table_name",context="dev",src_extension="csv",dstn_extension="csv")
 """
+Args:
+    layer (int): A camada onde será salvo/coletado o arquivo
+    context (str): contexto pode ser dev, prod ou teste
+    table_name (str): Nome da tabela
+    extension (str): Extensão do arquivo
+
+Returns:
+    str: caminho a salvar/coletar um arquivo
 """ <br>
 path_builder(dir_path: str)
+"""
+Args:
+    dir_path (str): path completo de uma tabela
+    
+Runs:
+    Cria diretório, caso não exista
 
+Returns:
+    str: path sem o nome do arquivo
+""" <br>
 ## Power BI
 ![alt text](power_bi/imagens/analise.png)
 

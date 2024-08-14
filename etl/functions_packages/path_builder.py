@@ -30,6 +30,17 @@ def path_definition(src_layer=1,dstn_layer=2,table_name="table_name",context="de
 
 
 def path_builder(dir_path: str) -> str:
+    """_summary_
+
+    Args:
+        dir_path (str): path completo de uma tabela
+        
+    Runs:
+        Cria diretório, caso não exista
+
+    Returns:
+        str: path sem o nome do arquivo
+    """
     # Divide o caminho e obtém a parte anterior ao último separador
     dir = dir_path.rsplit('\\', 1)[0] + '\\'
 
