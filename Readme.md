@@ -7,6 +7,13 @@ Aqui teremos um banco de dados SQLSERVER servindo uma API com os dados, e utiliz
 
 Neste estudo são utilizados conceitos de modelagem de dados para Datalake (Embora a arquitetura não seja hospedada em nuvem, a metodologia é similar) e modelagem Star Schema.
 
+## O caso
+
+Este repositório é parte de uma série de repositórios onde abordarei soluções para o cenário de Dados(Análise e Engenharia).
+
+No link abaixo está a explicação do estudo e estrutura de tabelas
+!["Explicação do caso"](https://github.com/josecarlos-dataengineer/estudo_analise_vendas_sql?tab=readme-ov-file#tabelas-e-explica%C3%A7%C3%A3o-do-estudo). 
+
 ## Ambiente
 O primeiro passo para iniciar o ambiente é criar um ambiente virtual. Você pode utilizar o método que estiver mais familiarizado para isso.
 
