@@ -77,7 +77,7 @@ Agora será criada uma tabela para armazenar as medidas DAX. Para isso acesse o 
 ![alt text](image-1.png)
 
 ***Inserindo medidas***
-![alt text](image-2.png)
+![alt text](image-2.png) <br>
 
 Ao inserir medidas, certifique-se de que os campos destacados na imagem estão de acordo com o esperado.
 
