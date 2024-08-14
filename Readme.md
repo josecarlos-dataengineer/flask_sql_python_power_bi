@@ -75,7 +75,7 @@ Basta executar o arquivo etl\functions.py, e as funções serão executadas na o
 
 ### funções
 docstrings: <br>
-is_api_available(table_name:str) <br>
+**is_api_available(table_name:str)** <br>
 """
 Args:
     table_name (str): Nome da tabela a qual se consulta via API
@@ -86,7 +86,7 @@ Raises:
 Returns:
     str: lista com mensagem 'Disponíve', response e url
 """ <br>
-get_data_from_api(table_name) <br>
+**get_data_from_api(table_name)** <br>
 """
 Args:
     table_name (_type_): Nome da tabela a qual se consulta via API
@@ -94,7 +94,7 @@ Args:
 Returns:
     tuple: response.content,table_name
 """ <br>
-writeson_landing(table_name:str,layer=1,extension="json") <br>
+**writeson_landing(table_name:str,layer=1,extension="json")** <br>
 """
 Args:
     table_name (str): Nome da tabela a qual se consulta via API
@@ -108,7 +108,7 @@ Calls:
 Writes:
     object: Escreve o objeto no diretorio definido
 """ <br>
-read_from_landing(table_name:str,layer=1,extension="json") <br>
+**read_from_landing(table_name:str,layer=1,extension="json")** <br>
 """
 Args:
     table_name (str): Nome da tabela a qual se consulta via API
@@ -118,7 +118,7 @@ Args:
 Returns:
     object: Pandas DataFrame
 """ <br>
-add_columns(df:pd.DataFrame,table_name:str) <br>
+**add_columns(df:pd.DataFrame,table_name:str)** <br>
 """
 Args:
     df (pd.DataFrame): Pandas Dataframe a ser tratado
@@ -127,7 +127,7 @@ Args:
 Returns:
     pd.DataFrame: Pandas Dataframe com a nova coluna 'load_date'
 """ <br>
-writeson_processed(table_name:str,layer=2,extension="csv") <br>
+**writeson_processed(table_name:str,layer=2,extension="csv")** <br>
 """
 Args:
     table_name (str): Nome da tabela a ser coletada e escrita
@@ -140,7 +140,7 @@ Writes:
 example: 
     writeson_processed(table_name="vendedores")
 """ <br>
-writeson_consume(table_name:list,layer=3,extension="csv") <br>
+**writeson_consume(table_name:list,layer=3,extension="csv")** <br>
 """
 Args:
     table_name (list): Lista de nomes das tabelas a ser coletadas, integradas e escritas
@@ -150,9 +150,9 @@ Args:
 Writes:
     object: arquivo csv com a integração das tabelas produtos. clientes,vendedores e vendas
     
-writeson_consume(table_name="vendedores") <br>
+writeson_consume(table_name="vendedores") 
 """ <br>
-path_definition(src_layer=1,dstn_layer=2,table_name="table_name",context="dev",src_extension="csv",dstn_extension="csv")
+**path_definition(src_layer=1,dstn_layer=2,table_name="table_name",context="dev",src_extension="csv",dstn_extension="csv")** <br>
 """
 Args:
     layer (int): A camada onde será salvo/coletado o arquivo
