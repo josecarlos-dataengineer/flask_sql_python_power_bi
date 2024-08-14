@@ -1,10 +1,12 @@
 
 
+Aqui uma breve explicação das transformações e DAX criadas para o Dashboard. <br>
+
 Ao abrir o Power BI Desktop
 
 Obter Dados -> csv -> selecione o arquivo obt.csv armazenado na pasta consume
 
-## Transformar dados
+### Transformar dados
 Acesse Transformar Dados
 
 A primeira tarefa será remover colunas que não serão utilizadas. Clique na opção **Adicionar Etapa** conforme indicado na imagem abaixo:
@@ -69,7 +71,7 @@ else "")
 
 Clique em Fechar/Aplicar
 
-## DAX
+### DAX
 Agora será criada uma tabela para armazenar as medidas DAX. Para isso acesse o comando Inserir Dados. <br>
 
 ***Inserir dados***
