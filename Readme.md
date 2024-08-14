@@ -9,7 +9,7 @@ Neste estudo são utilizados conceitos de modelagem de dados para Datalake (Embo
 
 ## O caso
 
-Este repositório é parte de uma série de repositórios onde abordarei soluções para o cenário de Dados(Análise e Engenharia). No reporitório !["estudo_analise_vendas_sql"](https://github.com/josecarlos-dataengineer/estudo_analise_vendas_sql) foi apresentado um cenário em que a análise é feita toda em SQL. Já neste, é apresentada uma solução um pouco mais complexa, usando Pandas, conceito de Datalake, DW, coleta de dados por API e Power BI.
+Este repositório é parte de uma série de repositórios em que apresento soluções para o cenário de Dados(Análise e Engenharia). No reporitório !["estudo_analise_vendas_sql"](https://github.com/josecarlos-dataengineer/estudo_analise_vendas_sql) foi apresentado um cenário em que a análise é feita toda em SQL. Já neste, é apresentada uma solução um pouco mais complexa, usando Pandas, conceito de Datalake, DW, coleta de dados por API e Power BI.
 
 No link a seguir está a explicação do estudo e estrutura de tabelas
 !["Explicação do caso"](https://github.com/josecarlos-dataengineer/estudo_analise_vendas_sql?tab=readme-ov-file#tabelas-e-explica%C3%A7%C3%A3o-do-estudo). 
