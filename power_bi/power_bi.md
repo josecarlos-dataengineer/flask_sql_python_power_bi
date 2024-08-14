@@ -71,13 +71,13 @@ Clique em Fechar/Aplicar
 Agora será criada uma tabela para armazenar as medidas DAX. Para isso acesse o comando Inserir Dados. <br>
 
 ***Inserir dados***
-![alt text](image.png)
+![alt text](imagens/inserir_dados.png)
 
 ***Nomeando tabela e coluna*** <br>
-![alt text](image-1.png)
+![alt text](imagens/criar_tabela.png) <br>
 
 ***Inserindo medidas***
-![alt text](image-2.png) <br>
+![alt text](imagens/checando_medida.png) <br>
 
 Ao inserir medidas, certifique-se de que os campos destacados na imagem estão de acordo com o esperado.
 
