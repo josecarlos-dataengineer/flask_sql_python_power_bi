@@ -81,19 +81,27 @@ Agora será criada uma tabela para armazenar as medidas DAX. Para isso acesse o 
 
 Ao inserir medidas, certifique-se de que os campos destacados na imagem estão de acordo com o esperado.
 
+***preco_unitario***
 ```
 preco_unitario = sum(obt[preco])
 ```
 
+***custo_unitario***
 ```
 custo_unitario = sum(obt[custo])
 ```
 
+***quantidade***
 ```
 quantidade = sum(obt[quantidade])
 ```
 
+***subtotal***
 ```
 subtotal = SUMX(obt, [quantidade] * [preco_unitario])
 ```
 
+***ticket_medio***
+```
+ticket_medio = tabela_medidas[subtotal] / [quantidade]
+```
