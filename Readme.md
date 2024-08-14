@@ -64,6 +64,8 @@ Um panorama da arquitetura é:
 
 ![alt text](imagens/resumo_processo.png)
 
+Basta executar o arquivo etl\functions.py, e as funções serão executadas na ordem correta para que se tenha os arquivos prontos em suas devidas camadas.
+
 ## Power BI
 ![alt text](power_bi/imagens/analise.png)
 
