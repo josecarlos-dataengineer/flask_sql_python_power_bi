@@ -73,6 +73,34 @@ Um panorama da arquitetura é:
 
 Basta executar o arquivo etl\functions.py, e as funções serão executadas na ordem correta para que se tenha os arquivos prontos em suas devidas camadas.
 
+### funções
+docs:
+is_api_available(table_name:str)
+"""
+""" <br>
+get_data_from_api(table_name)
+"""
+""" <br>
+writeson_landing(table_name:str,layer=1,extension="json")
+"""
+""" <br>
+read_from_landing(table_name:str,layer=1,extension="json")
+"""
+""" <br>
+add_columns(df:pd.DataFrame,table_name:str)
+"""
+""" <br>
+writeson_processed(table_name:str,layer=2,extension="csv")
+"""
+""" <br>
+writeson_consume(table_name:list,layer=3,extension="csv")
+"""
+""" <br>
+path_definition(src_layer=1,dstn_layer=2,table_name="table_name",context="dev",src_extension="csv",dstn_extension="csv")
+"""
+""" <br>
+path_builder(dir_path: str)
+
 ## Power BI
 ![alt text](power_bi/imagens/analise.png)
 
