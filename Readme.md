@@ -5,7 +5,7 @@ Mas aqui faremos algumas mudanças, com a finalidade de avançar na utilização
 
 Aqui teremos um banco de dados SQLSERVER servindo uma API com os dados, e utilizaremos Python para coletar, tratar e salvar os dados da API em formato CSV.
 
-Neste estudo são utilizados conceitos de modelagem de dados para Datalake e modelagem Star Schema.
+Neste estudo são utilizados conceitos de modelagem de dados para Datalake (Embora a arquitetura não seja hospedada em nuvem, a metodologia é similar) e modelagem Star Schema.
 
 ## Ambiente
 O primeiro passo para iniciar o ambiente é criar um ambiente virtual. Você pode utilizar o método que estiver mais familiarizado para isso.
@@ -34,8 +34,28 @@ Werkzeug==2.0.3
 PyMySQL==1.0.2
 requests
 pandas==2.2.2
+python-dotenv==1.0.1 
 ```
 
+Feito isso, será possível notar uma pasta nova no diretório, com o nome escolhido para o ambiente virtual.
+
+## SQLSERVER
+Execute o arquivo sql\criar_tabelas.sql. Isso criará as tabelas de exemplo, que servirão a API.
+
+## Flask
+Crie um arquivo chamado .env na mesma pasta da aplicação FLask, com os seguintes dados:
+
+```
+server = 'seu server'
+database = 'nome do banco'
+username = 'user '
+password = 'senha'
+driver = 'driver para sqlserver aqui usei esse ODBC Driver 17 for SQL Server'
+```
+Execute o arquivo flask\api.py. Ele tornará disponível a API para os dados contidos no banco de dados. <br>
+
+***Atenção para o preenchimento do arquivo .env, pois ele é que montará a string de conexão.*** <br>
+![alt text](image.png)
 
 ## Power BI
 ![alt text](power_bi/imagens/analise.png)
