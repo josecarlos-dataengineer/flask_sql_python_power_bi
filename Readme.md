@@ -55,7 +55,14 @@ driver = 'driver para sqlserver aqui usei esse ODBC Driver 17 for SQL Server'
 Execute o arquivo flask\api.py. Ele tornará disponível a API para os dados contidos no banco de dados. <br>
 
 ***Atenção para o preenchimento do arquivo .env, pois ele é que montará a string de conexão.*** <br>
-![alt text](image.png)
+![alt text](imagens/env_exemplo.png)
+
+## ETL Python
+A aplicação que coleta os dados, transforma e carrega na pasta para consumo, utiliza diversas bibliotecas Python, como Pandas, Json e Requests.
+
+Um panorama da arquitetura é:
+
+![alt text](imagens/resumo_processo.png)
 
 ## Power BI
 ![alt text](power_bi/imagens/analise.png)
