@@ -78,7 +78,7 @@ Agora será criada uma tabela para armazenar as medidas DAX. Para isso acesse o 
 
 ***Inserindo medidas***
 ![alt text](imagens/checando_medida.png) <br>
-
+ <br>
 Ao inserir medidas, certifique-se de que os campos destacados na imagem estão de acordo com o esperado.
 
 ***preco_unitario***
