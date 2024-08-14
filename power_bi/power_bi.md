@@ -14,11 +14,11 @@ Copie o código M destacado e cole na barra de fórmulas, substituindo o conteú
 ```
 = Table.RemoveColumns(#"Tipo Alterado",{"id_cliente", "id_produto", "id_venda", "id_vendedor", "data_cadastro", "expira_em"})
 ```
-Há uma etapa em que o Power BI pode inferir os tipos de dados de maneira incorreta, logo após a etapa chamada Promover Cabeçalhos; remova essa etapa e inclua essas duas no lugar.
-
 O código criará uma etapa que remove as colunas indicadas entre {}.
 
 Repita o mesmo processo usando os códigos abaixo <br>
+
+Há uma etapa em que o Power BI pode inferir os tipos de dados de maneira incorreta, logo após a etapa chamada Promover Cabeçalhos; remova essa etapa e inclua essas três no lugar.
 
 ***Formatando os campos monetários e decimais***
 ```
