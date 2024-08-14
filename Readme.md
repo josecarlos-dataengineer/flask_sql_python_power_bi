@@ -74,7 +74,7 @@ Um panorama da arquitetura é:
 Basta executar o arquivo etl\functions.py, e as funções serão executadas na ordem correta para que se tenha os arquivos prontos em suas devidas camadas.
 
 ### funções
-docs:
+docstrings: <br>
 is_api_available(table_name:str)
 """
 """ <br>
